@@ -3,7 +3,9 @@
 import { ReactNode } from "react";
 
 // import Card from './Card';
-interface Props { children: ReactNode; }
+interface Props {
+  children: ReactNode;
+}
 
 function Card(props: Props) {
   // const width = {
@@ -12,11 +14,11 @@ function Card(props: Props) {
   return (
     <div
       className="card"
-      style={{
+     style={{
         width: "350px",
       }}
     >
-      <div className="card-body">{ children } </div>
+      <div className="card-body">{children} </div>
     </div>
   );
 }
@@ -24,17 +26,14 @@ function Card(props: Props) {
 interface CardBodyProps {
   title: string;
   text?: string;
- }
+}
 
 export function CardBody(props: CardBodyProps) {
- const { title, text} = props;
+  const { title, text } = props;
   return (
     <>
       <h5 className="card-title">{title}</h5>
-      <p className="card-text">
-       {text}
-      </p>
-     
+      <p className="card-text">{text}</p>
     </>
   );
 }
