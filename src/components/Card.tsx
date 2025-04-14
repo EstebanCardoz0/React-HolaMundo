@@ -1,0 +1,42 @@
+// import Card from './Card';
+
+import { ReactNode } from "react";
+
+// import Card from './Card';
+interface Props { children: ReactNode; }
+
+function Card(props: Props) {
+  // const width = {
+  //   width: "350px" };
+  const { children } = props;
+  return (
+    <div
+      className="card"
+      style={{
+        width: "350px",
+      }}
+    >
+      <div className="card-body">{ children } </div>
+    </div>
+  );
+}
+
+interface CardBodyProps {
+  title: string;
+  text?: string;
+ }
+
+export function CardBody(props: CardBodyProps) {
+ const { title, text} = props;
+  return (
+    <>
+      <h5 className="card-title">{title}</h5>
+      <p className="card-text">
+       {text}
+      </p>
+     
+    </>
+  );
+}
+
+export default Card;
